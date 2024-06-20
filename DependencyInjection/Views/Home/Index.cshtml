@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to ASP.NET Core Dependency Injection (DI). </h1>
+    <br />
+    <table width="100%" border="1">
+
+        @* TRANSIENT DEPENDENCY INJECTION *@
+        <tr rowspan="3" class="table-border">
+            <td>
+                Transient DI : 
+                Created each time they are requested | Different instances are injected each time | Suitable for lightweight, stateless services.
+            </td>
+        </tr>
+        <tr class="table-border">
+            <td> Transient Service 1 </td>
+            <td> : </td>
+            <td> @ViewBag.Transient1 </td>
+        </tr>
+        <tr class="table-border">
+            <td> Transient Service 2 </td>
+            <td> : </td>
+            <td> @ViewBag.Transient2 </td>
+        </tr>
+
+
+        @* SCOPPED DEPENDENCY INJECTION *@
+        <tr rowspan="3" class="table-border">
+            <td>
+                Scopped DI :
+                Created once per request | Same instance is injected within the same request but different across requests.
+            </td>
+        </tr>
+        <tr class="table-border">
+            <td> Scoped Service 1 </td>
+            <td> : </td>
+            <td> @ViewBag.ScopedService1 </td>
+        </tr>
+        <tr class="table-border">
+            <td> Scoped Service 2 </td>
+            <td> : </td>
+            <td> @ViewBag.ScopedService1 </td>
+        </tr>
+
+
+        @* SINGLETON DEPENDENCY INJECTION *@
+        <tr rowspan="3" class="table-border">
+            <td>
+                Singleton DI :
+                Created once and shared across the entire application. | Same instance is injected every time.
+            </td>
+        </tr>
+        <tr class="table-border">
+            <td> Singleton Service 1 </td>
+            <td> : </td>
+            <td> @ViewBag.SingletonService1 </td>
+        </tr>
+        <tr class="table-border">
+            <td> Singleton Service 2 </td>
+            <td> : </td>
+            <td> @ViewBag.SingletonService2 </td>
+        </tr>
+    </table>
+
+</div>
+
+<style>
+    .table-border {
+        border: 1px solid #E3E3E3;
+    }
+</style>
